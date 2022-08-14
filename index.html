@@ -9,51 +9,28 @@
 <body style="background-color: darkslategray; color: #fff;">
   <p>OOP Javascript</p>
   <script>
-    function Person() {
-      var name;
-      var age;
-      var height;
+    function Person(_name, _age, _height) {
+      var name = _name;
+      var age = _age;
+      var height = _height;
 
       this.sayHello = function(name) {
         return console.log('Hello ' + name);
       }
-      function hello(name) {
-        return console.log('Hello ' + name);
-      }
-      this.getName = function getName() {
+      
+      this.getName = function() {
         return this.name;
       }
-      this.setName = function setName(name) {
-        this.name = name;
-      }
-      this.getAge = function getAge() {
+      this.getAge = function() {
         return this.age;
       }
-      this.setAge = function setAge(age) {
-        this.age = age;
-      }
-      this.getHeight = function getHeight() {
+      this.getHeight = function() {
         return this.height;
       }
-      this.setHeight = function setHeight(height) {
-        this.height = height;
-      }
     }
 
-    Person.static_method = function() {
-      console.log('This is my first static method');
-    }
-    Person.static_method();
-
-    Person.static_attr = 'My first static attribute';
-    console.log(Person.static_attr);
-
-    var will = new Person();
-    will.setName('Will');
-    will.setAge(34);
-    will.setHeight(174);
+    var will = new Person('Will', '34', '174');
     will.sayHello(will.getName(), will.getAge(), will.getHeight());
-    // will.hello();// erro, pois a função não foi atribuída ao this.
 
     console.log(will);
   </script>
