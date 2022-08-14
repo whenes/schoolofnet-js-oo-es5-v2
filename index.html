@@ -25,6 +25,9 @@
       this.getName = function() {
         return name;
       }
+      this.setAge = function(_age) {
+        this.age = _age;
+      }
       this.getAge = function() {
         return age;
       }
@@ -33,15 +36,27 @@
       }
     }
 
-    Person.prototype.myProtoFunc = function() {
-      console.log('First prototype funciont');
+    Person.prototype.happyBirthday = function() {
+      return this.setAge(this.getAge() + 1);
     }
+    
+    function Employee(_name, _age, _height, _salary) {
+      var salary = _salary;
 
-    var will = new Person('Will', '34', '174');
-    console.log(will);
-    console.log(will.__proto__);
-    console.log(Person.prototype);
-    will.myProtoFunc();
+      Person.call(this, _name, _age, _height);
+      this.getSalary = function() {
+        return salary;
+      }      
+      this.seSalary = function(_salary) {
+        salary = _salary;
+      }
+    }
+    Employee.prototype = Object.create(Person.prototype);
+
+    var will = new Employee('Will', 34, 174, 1500);
+    console.log(will.getName(), will.getAge(), will.getHeight(), will.getSalary());
+    will.happyBirthday();
+    console.log(will.getName(), will.getAge(), will.getHeight(), will.getSalary());
   </script>
 </body>
 </html>
