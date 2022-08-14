@@ -6,18 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OOP Javascript</title>
 </head>
-<body>
+<body style="background-color: darkslategray; color: #fff;">
   <p>OOP Javascript</p>
   <script>
     function Person() {
-      
-    }
-    var Person = function Person() {
+      this.name;
+      this.age;
+      this.height;
 
+      this.sayHello = function(name) {
+        return console.log('Hello ' + name);
+      }
+      function hello(name) {
+        return console.log('Hello ' + name);
+      }
     }
-    var Person = {
 
-    }
+    var will = new Person();
+    will.name = 'Will';
+    will.age = 34;
+    will.height = 174;
+    will.sayHello(will.name);
+    will.hello();// erro, pois a função não foi atribuída ao this.
+
+    console.log(will);
   </script>
 </body>
 </html>
