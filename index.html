@@ -40,6 +40,14 @@
       }
     }
 
+    Person.static_method = function() {
+      console.log('This is my first static method');
+    }
+    Person.static_method();
+
+    Person.static_attr = 'My first static attribute';
+    console.log(Person.static_attr);
+
     var will = new Person();
     will.setName('Will');
     will.setAge(34);
