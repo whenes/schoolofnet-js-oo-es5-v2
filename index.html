@@ -33,10 +33,15 @@
       }
     }
 
-    var will = new Person('Will', '34', '174');
-    will.sayHello(will.getName());
+    Person.prototype.myProtoFunc = function() {
+      console.log('First prototype funciont');
+    }
 
+    var will = new Person('Will', '34', '174');
     console.log(will);
+    console.log(will.__proto__);
+    console.log(Person.prototype);
+    will.myProtoFunc();
   </script>
 </body>
 </html>
