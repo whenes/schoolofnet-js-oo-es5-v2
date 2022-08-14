@@ -54,9 +54,12 @@
     Employee.prototype = Object.create(Person.prototype);
 
     var will = new Employee('Will', 34, 174, 1500);
-    console.log(will.getName(), will.getAge(), will.getHeight(), will.getSalary());
+    console.log(will.getAge());
+    will.happyBirthday = function happyBirthday() {
+      return this.setAge(this.getAge() + 2);
+    };
     will.happyBirthday();
-    console.log(will.getName(), will.getAge(), will.getHeight(), will.getSalary());
+    console.log(will.getAge());
   </script>
 </body>
 </html>
