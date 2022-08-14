@@ -10,9 +10,9 @@
   <p>OOP Javascript</p>
   <script>
     function Person() {
-      this.name;
-      this.age;
-      this.height;
+      var name;
+      var age;
+      var height;
 
       this.sayHello = function(name) {
         return console.log('Hello ' + name);
@@ -20,14 +20,32 @@
       function hello(name) {
         return console.log('Hello ' + name);
       }
+      this.getName = function getName() {
+        return this.name;
+      }
+      this.setName = function setName(name) {
+        this.name = name;
+      }
+      this.getAge = function getAge() {
+        return this.age;
+      }
+      this.setAge = function setAge(age) {
+        this.age = age;
+      }
+      this.getHeight = function getHeight() {
+        return this.height;
+      }
+      this.setHeight = function setHeight(height) {
+        this.height = height;
+      }
     }
 
     var will = new Person();
-    will.name = 'Will';
-    will.age = 34;
-    will.height = 174;
-    will.sayHello(will.name);
-    will.hello();// erro, pois a função não foi atribuída ao this.
+    will.setName('Will');
+    will.setAge(34);
+    will.setHeight(174);
+    will.sayHello(will.getName(), will.getAge(), will.getHeight());
+    // will.hello();// erro, pois a função não foi atribuída ao this.
 
     console.log(will);
   </script>
